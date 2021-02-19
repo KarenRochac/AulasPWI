@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>MOVIE PARTY</title>
   </head>
-  <body class="bg-light">
+  <body>
     <div class="container-fluid">
             <nav class="navbar fixed-top navbar-dark bg-danger d-flex justify-content-center">
                 <a class="navbar-brand" href="#"><i class="fas fa-film"></i> MOVIE PARTY</a>
@@ -60,27 +60,27 @@
     </div> <!--FIM CONTAINER FLUID-->
 
     <div class="container-md mt-5">
-    <div class="container-md mt-5 d-flex justify-content-between">
+    <div class="container-md mt-5">
       <h4>Altere a cor do site:</h4>
-      <button type="button" class="btn btn-primary">Azul</button>
-      <button type="button" class="btn btn-secondary">Cinza</button>
-      <button type="button" class="btn btn-success">Verde</button>
-      <button type="button" class="btn btn-danger">Vermelho</button>
-      <button type="button" class="btn btn-warning">Amarelo</button>
-      <button type="button" class="btn btn-info">Ciano</button>
-      <button type="button" class="btn btn-light">Light</button>
-      <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" id="fundoAzul" class="btn btn-primary">Azul</button>
+        <button type="button" id="fundoCinza" class="btn btn-secondary">Cinza</button>
+        <button type="button" id="fundoVerde" class="btn btn-success">Verde</button>
+        <button type="button" id="fundoVermelho" class="btn btn-danger">Vermelho</button>
+        <button type="button" id="fundoAmarelo" class="btn btn-warning">Amarelo</button>
+        <button type="button" id="fundoCiano" class="btn btn-info">Ciano</button>
+        <button type="button" id="fundoLight" class="btn btn-light">Light</button>
+        <button type="button" id="fundoDark" class="btn btn-dark">Dark</button>
     </div><!--FIM BOTÕES CORES-->
 
     <br/>
 
-      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary font-weight-bold">Exibir filmes</button>
-        <button type="button" class="btn btn-primary font-weight-bold">Ocultar filmes</button>
-      </div><!--FIM BOTÕES EBIBIR/OCULTAR-->
-      
-      <div class="alert alert-primary mt-3 font-weight-bold" role="alert">FILMES</div>
-        <div class="row ">
+      <div class="alert alert-primary mt-3 font-weight-bold" role="alert"> FILMES
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+          <button type="button" id="exibirFilmes" class="btn btn-primary font-weight-bold">Exibir filmes</button>
+          <button type="button" id="ocultarFilmes" class="btn btn-primary font-weight-bold">Ocultar filmes</button>
+        </div><!--FIM BOTÕES EBIBIR/OCULTAR-->
+      </div>
+        <div class="row" id="filmes">
             <div class="col-md">
                 <div class="card">
                     <img src="img/Fratura-filme.jpg" class="card-img-top" alt="capa filme fratura">
@@ -125,16 +125,17 @@
                   </div>
             </div>
           </div> <!--FIM ROW-1-->
-
           <br/>
           <br/>
-          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-danger font-weight-bold">Exibir séries</button>
-            <button type="button" class="btn btn-danger font-weight-bold">Ocultar séries</button>
-          </div><!--FIM BOTÕES EBIBIR/OCULTAR-->
+          
 
-          <div class="alert alert-danger mt-3 font-weight-bold" role="alert">SÉRIES</div>
-        <div class="row">
+          <div class="alert alert-danger mt-3 font-weight-bold" role="alert">SÉRIES
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+              <button type="button" id="exibirSeries" class="btn btn-danger font-weight-bold">Exibir séries</button>
+              <button type="button" id="ocultarSeries" class="btn btn-danger font-weight-bold">Ocultar séries</button>
+            </div><!--FIM BOTÕES EBIBIR/OCULTAR-->
+          </div>
+        <div class="row" id="series">
             <div class="col-md">
                 <div class="card">
                     <img src="img/Stranger_Things.png" class="card-img-top" alt="capa série stranger things">
@@ -181,12 +182,14 @@
         
           <br/>
           <br/>
+          
+        <div class="alert alert-warning mt-3 font-weight-bold" role="alert">DESENHOS
           <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-warning font-weight-bold">Exibir desenhos</button>
-            <button type="button" class="btn btn-warning font-weight-bold">Ocultar desenhos</button>
+            <button type="button" id="exibirDesenhos" class="btn btn-warning font-weight-bold">Exibir desenhos</button>
+            <button type="button" id="ocultarDesenhos" class="btn btn-warning font-weight-bold">Ocultar desenhos</button>
           </div><!--FIM BOTÕES EBIBIR/OCULTAR-->
-        <div class="alert alert-warning mt-3 font-weight-bold" role="alert">DESENHOS</div>
-        <div class="row">
+        </div>
+        <div class="row" id="desenhos">
             <div class="col-md">
                 <div class="card">
                     <img src="img/hora-aventura.png" class="card-img-top" alt="capa desenho hora de aventura">
@@ -235,25 +238,112 @@
           <br/>
 
           
-          <div><!--INICIO DIV FORMS-->
+          <div>
             <h3>Formulário de contato</h3>
-            <div class="card">
-              <form><!--INICIO TAG FORM-->
-                <div class="form-group">
-                  <label for="exampleInputEmail1" class="font-weight-bold">E-mail</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div><!--FIM TAG FORM-->
-            </div><!--FIM CARD-->
-          </div><!--FIM DIV FORMS-->
+            <form>
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" class="form-control"></textarea>
+              </div>
+
+              <button type="button" id="enviarAlert" class="btn btn-outline-secondary">Enviar</button>
+            </form>
+          </div>
+          <br/>
+          <br/>
+
 
     </div> <!--fim container-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+
+    <!-- Optional JavaScript -->
+     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/c0cfa66a9d.js" crossorigin="anonymous"></script>
+
+    <script>
+      $('#fundoAzul').click(function () {
+        $('body').addClass('bg-primary');
+      });
+
+      $('#fundoCinza').click(function () {
+        $('body').addClass('bg-secondary');
+      });
+
+      $('#fundoVerde').click(function() {
+        $('body').addClass('bg-success');
+      });
+
+      $('#fundoVermelho').click(function() {
+        $('body').addClass('bg-danger');
+      });
+
+      $('#fundoAmarelo').click(function() {
+        $('body').addClass('bg-warning');
+      });
+
+      $('#fundoCiano').click(function() {
+        $('body').addClass('bg-info');
+      });
+
+      $('#fundoLight').click(function() {
+        $('body').addClass('bg-light');
+      });
+
+      $('#fundoDark').click(function() {
+        $('body').addClass('bg-dark');
+      });
+      // fim botões
+
+      $('#exibirFilmes').click(function(){
+        $('#filmes').show();
+      });
+
+      $('#ocultarFilmes').click(function(){
+        $('#filmes').hide();
+      });
+
+      $('#exibirSeries').click(function(){
+        $('#series').show();
+      });
+
+      $('#ocultarSeries').click(function(){
+        $('#series').hide();
+      });
+
+      $('#exibirDesenhos').click(function(){
+        $('#desenhos').show();
+      });
+
+      $('#ocultarDesenhos').click(function(){
+        $('#desenhos').hide();
+      });
+      // fim botões ocultar e exibir
+
+
+      $('#enviarAlert').click(function() {
+          alert(
+            "Nome: " + $('#nome').val() +
+            "\nE-mail: " + $('#email').val() +
+            "\nMensagem: " + $('#mensagem').val() +
+          '');
+      });
+
+
+    </script>
   </body>
 </html>
