@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Caculadora Simples - 2o.D.S.</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+    <form id="frm"  >
+        <div id="container">
+            <div id="topo"> 
+                <h1>Calculadora simples</h1>
+            </div>
+            <div id="campos">
+              <div id="bloco1">
+                <span>Entre com os números para cálculo:</span><br>
+                <input type="text" size="2" id="num1" placeholder="Num.1"><br>
+                <input type="text" size="2" id="num2" placeholder="Num.2"><br><br>
+                <input type="button" value="+" onClick="calculadora(this)">
+                <input type="button" value="-" onClick="calculadora(this)">
+                <input type="button" value="*" onClick="calculadora(this)">
+                <input type="button" value="/" onClick="calculadora(this)"><br><br>
+                <input type="button" value="Limpar" onClick="limpar()">
+
+              </div>
+            </div>
+
+        </div>
+    </form>
+
+    <script>
+      function calculadora(parametro){
+
+        var operacao = parametro.value;
+
+        var n1 = parseFloat(document.getElementById("num1").value);
+        var n2 = parseFloat(document.getElementById("num2").value);
+
+        var calculo = eval(n1+operacao+n2);
+
+        if(isNaN(calculo)){
+            alert("Calculo inválido!!!");
+        }else{
+            alert(calculo);
+        }
+      }
+
+      function limpar(){
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+
+      }
+
+    </script>
+
+  </body>
+</html>

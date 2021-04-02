@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Caculadora</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+    <div class="fundo">
+      <h1>Tarefa Calculadora Karen</h1>
+      <div class="calculadora">
+          <h2>Calculadora</h2>
+          <p id="resultado"></p>
+          <table>
+            <tr>
+              <td><button class="botao" onclick="clean('')">C</button></td>
+              <td><button class="botao" onclick="back('')">B</button></td>
+              <td><button class="botao" onclick="insert('/')">/</button></td>
+              <td><button class="botao" onclick="insert('*')">X</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('7')">7</button></td>
+              <td><button class="botao" onclick="insert('8')">8</button></td>
+              <td><button class="botao" onclick="insert('9')">9</button></td>
+              <td><button class="botao" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('4')">4</button></td>
+              <td><button class="botao" onclick="insert('5')">5</button></td>
+              <td><button class="botao" onclick="insert('6')">6</button></td>
+              <td><button class="botao" onclick="insert('+')">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('1')">1</button></td>
+              <td><button class="botao" onclick="insert('2')">2</button></td>
+              <td><button class="botao" onclick="insert('3')">3</button></td>
+              <td rowspan="2"><button class="botao" onclick="calcular()" style="height: 106px;">=</button></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button class="botao" onclick="insert('0')" style="width: 106px;">0</button></td>
+              <td><button class="botao" onclick="insert('.')">.</button></td>
+            </tr>
+          </table>
+
+      </div>
+    </div>
+
+    <script src="../pwii-tarefa-calculadora/js/script.js"></script>
+
+  </body>
+</html>

@@ -35,9 +35,10 @@
         <textarea id="preparo" class="form-control"></textarea>
         </div>
       </br>
-        <button type="button" id="enviarAlert" class="btn btn-outline-secondary">Enviar</button>
+        <button type="button" id="enviarAlert" class="btn btn-outline-secondary">Cadastrar</button>
+        <button type="button" id="enviarAlertAtualizado" class="btn btn-outline-secondary">Atualizar</button>
       </form>
-
+      
     </div>
     <br/>
     <br/>
@@ -53,18 +54,28 @@
     </script>
     <script src="https://kit.fontawesome.com/c0cfa66a9d.js" crossorigin="anonymous"></script>
 
-  <script>
+
+
+    <!--Simulação Cadastro, Atualização e Exclusão-->
+    <script> 
     
-    $('#enviarAlert').click(function() {
-      alert(
-          "Receita Cadastrada com Sucesso!!" +
-      '');
-    });
+      $('#enviarAlert').click(function() {
+        alert(
+            "Receita Cadastrada com Sucesso!!" +
+        '');
+      });
+       
+      
+      $('#enviarAlertAtualizado').click(function() {
+        alert(
+            "Receita Atualizada com sucesso!!" +
+        '');
+      });
+  
+  
+    </script>
 
-
-  </script>
-
-   
+  
     
     
   </body>
